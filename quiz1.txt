@@ -1,10 +1,14 @@
-1.
-2.
-3.
-4.
-5.
-6.
-7.
-8.
-9.
-10.
+Reginald Geoffrey Bayeta IV
+1. Unit Testing - testing units/methods in isolation (check mo yung ingredients)
+2. Integration Testing - when you test how different parts of your program work together
+not just in isolation or by individual tests (gawa ka ng dish gamit ingredients)
+3. System Testing - Testing the whole system with respect to the requirements and compliance,
+ensuring that all parts are working as intended and everything is functional (buong meal na)
+4. Acceptance - testing if the system meets and satisfies the needs of the user, and the requirements set during the
+start of the development phase (masarap ba yung niluto sabi ng mga nakatikim?)
+5. False, it is the expected value.
+6. JUnit Jupiter
+7. assertEquals(expected, actual) - asserts if expected is same as actual
+8. assertNotEquals(expected, actual) - asserts if expected is not the same as actual
+9. assertTrue(condition) - assert that condition is true
+10. assertNull(object) - assert that object is null
