@@ -1,28 +1,38 @@
 package com.gcash;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 
 public class AccountRepository {
-    private final List<Account> accounts = new ArrayList<>();
+    private final Map<String, Account> accounts;
+
+    AccountRepository() {
+        accounts = new HashMap<>();
+    }
 
     public String createAccount(String name, Double initialBalance) {
-        String id = UUID.randomUUID().toString();
+        String id;
+        do {
+            id = UUID.randomUUID().toString();
+        } while (accounts.containsKey(id));
+
         Account account = new Account(id, name, initialBalance);
-        accounts.add(account);
+        accounts.put(id, account);
         return id;
     }
 
-    public Account getAccount(String id) {
-        return accounts.stream()
-                .filter(account -> id.equals(account.id()))
-                .findFirst()
-                .orElse(null);
+
+    public Account  getAccount(String id) {
+        return accounts.get(id);
+    }
+
+    public void updateAccount(Account account) {
+        accounts.put(account.getId(), account);
     }
 
     public void deleteAccount(String id) {
-        accounts.removeIf(account -> account.id().equals(id));
+        accounts.remove(id);
     }
 
     public Integer getNumberOfAccounts() {

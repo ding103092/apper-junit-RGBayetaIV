@@ -10,15 +10,15 @@ public class AccountRepositoryTest {
     void successfulAccountCreationTest() {
         AccountRepository repository = new AccountRepository();
         String accountId = repository.createAccount("Ding",100.00);
-        Assertions.assertEquals("Ding",repository.getAccount(accountId).name());
+        Assertions.assertEquals("Ding",repository.getAccount(accountId).getName());
     }
 
     @Test
-    void getAccountTest() {
+    void successfulGetAccountTest() {
         AccountRepository repository = new AccountRepository();
         String accountId = repository.createAccount("Ding",100.00);
         Assertions.assertNotNull(repository.getAccount(accountId));
-        Assertions.assertEquals(100.0,repository.getAccount(accountId).balance());
+        Assertions.assertEquals(100.0,repository.getAccount(accountId).getBalance());
         Assertions.assertNull(repository.getAccount("RANDOM_ID"));
     }
 
