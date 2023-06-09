@@ -18,7 +18,6 @@ public class BalanceService {
 
     public Double getBalance(String id) {
         Account account = accountRepository.getAccount(id);
-        System.out.println(account);
         if (account != null) {
             return account.getBalance();
         } else {
