@@ -1,5 +1,9 @@
 package com.gcash;
 
+/**
+ * This Account class uses standard class implementation
+ * with getters and setters
+ */
 public class Account {
     private final String id;
     private final String name;
