@@ -3,16 +3,6 @@ package com.gcashv2;
 public record BalanceService(AccountRepository accountRepository) {
 
     /**
-     * Calls the accountRepository to access its methods
-     *
-     * @return The accountRepository instance
-     */
-    @Override
-    public AccountRepository accountRepository() {
-        return this.accountRepository;
-    }
-
-    /**
      * Deletes the account in the accountRepository
      *
      * @param id The id of the account to be deleted

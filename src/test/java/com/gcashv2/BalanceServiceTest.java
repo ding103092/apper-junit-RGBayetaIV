@@ -24,12 +24,12 @@ class BalanceServiceTest {
     @Test
     void successfulAccountCreationDeletionTest() {
         // Handles creation testing
-        Assertions.assertEquals("Ding",balanceService.getAccountRepository().getAccount(accountId1).name());
-        Assertions.assertNotNull(balanceService.getAccountRepository().getAccount(accountId2));
+        Assertions.assertEquals("Ding",balanceService.accountRepository().getAccount(accountId1).name());
+        Assertions.assertNotNull(balanceService.accountRepository().getAccount(accountId2));
         Assertions.assertEquals(500.0,balanceService.getBalance(accountId1));
-        Assertions.assertNull(balanceService.getAccountRepository().getAccount("RANDOM_ID"));
-        Assertions.assertEquals(3,balanceService.getAccountRepository().getNumberOfAccounts());
-        Assertions.assertFalse(balanceService.getAccountRepository().noRegisteredAccount());
+        Assertions.assertNull(balanceService.accountRepository().getAccount("RANDOM_ID"));
+        Assertions.assertEquals(3,balanceService.accountRepository().getNumberOfAccounts());
+        Assertions.assertFalse(balanceService.accountRepository().noRegisteredAccount());
 
         // Handles Deletion testing
         balanceService.deleteAccount(accountId3);
@@ -85,12 +85,12 @@ class BalanceServiceTest {
 
     @Test
     void noRegisteredAccount() {
-        Assertions.assertFalse(balanceService.getAccountRepository().noRegisteredAccount());
-        Assertions.assertEquals(3, balanceService.getAccountRepository().getNumberOfAccounts());
+        Assertions.assertFalse(balanceService.accountRepository().noRegisteredAccount());
+        Assertions.assertEquals(3, balanceService.accountRepository().getNumberOfAccounts());
         balanceService.deleteAccount(accountId1);
         balanceService.deleteAccount(accountId2);
         balanceService.deleteAccount(accountId3);
-        Assertions.assertEquals(0, balanceService.getAccountRepository().getNumberOfAccounts());
-        Assertions.assertTrue(balanceService.getAccountRepository().noRegisteredAccount());
+        Assertions.assertEquals(0, balanceService.accountRepository().getNumberOfAccounts());
+        Assertions.assertTrue(balanceService.accountRepository().noRegisteredAccount());
     }
 }
