@@ -3,6 +3,10 @@ package com.gcash;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 
+/**
+ * Note: This test is the one used in class. For the Lab 1 Tests, kindly
+ * see BalanceServiceTest under gcash or gcashv2. Thanks.
+ */
 
 public class AccountRepositoryTest {
 
